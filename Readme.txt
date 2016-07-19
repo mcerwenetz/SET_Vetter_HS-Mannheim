@@ -8,6 +8,8 @@ Stefan Hohnstein, July 2016
    |      |
    |      +--+papers          (to be) published papers from this project
    |      |
+   |      +--+planing         Anything related to planning projects (e.g. MS Project projects, etc. )
+   |      |
    |      +--+reports         Final Reports, Forms, letters, etc. (e.g. documents for BMBF/VDI/etc.)
    |      |
    |      +--+thesis          Any thesis or Studienarbeit written based on this project
