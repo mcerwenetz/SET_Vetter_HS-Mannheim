@@ -36,6 +36,24 @@ Stefan Hohnstein, July 2016
    |      |
    |      +--+electrical      e.g. eagle files, each project in separate sub-folder
    |      |
+   |      +--+fpga
+   |	  |	  |
+   |	  |	  +--+libs
+   |	  |	  |
+   |	  |	  +--+modules
+   |	  |	  |
+   |	  |	  +--+pl              Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
+   |	  |	  |
+   |	  |	  +--+plugin
+   |	  |	  |
+   |	  |	  +--+qmake
+   |	  |	  |
+   |	  |	  +--+qml
+   |	  |	  |
+   |	  |	  +--+sandbox         Use this sandbox for testing and matlab testings/development
+   |	  |	  |
+   |	  |	  +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
+   |	  |
    |      +--+mechanical      e.g. Autodesk Inventor projects, each project in separate sub-folder
    |
    +-+matlab                  Folder contents as described by Timo
@@ -50,7 +68,7 @@ Stefan Hohnstein, July 2016
    |      |
    |      +--+sandbox         Use this sandbox for testing and matlab testings/development
    |      |
-          +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
+   |      +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
    |
    +-+software                Folder contents as described by Timo
           +
