@@ -44,12 +44,6 @@ Stefan Hohnstein, July 2016
    |	  |	  |
    |	  |	  +--+pl              Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
    |	  |	  |
-   |	  |	  +--+plugin
-   |	  |	  |
-   |	  |	  +--+qmake
-   |	  |	  |
-   |	  |	  +--+qml
-   |	  |	  |
    |	  |	  +--+sandbox         Use this sandbox for testing and matlab testings/development
    |	  |	  |
    |	  |	  +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
@@ -77,8 +71,6 @@ Stefan Hohnstein, July 2016
           +--+libs
           |
           +--+modules
-          |
-          +--+pl              Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
           |
           +--+plugin
           |
