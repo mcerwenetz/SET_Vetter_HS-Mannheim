@@ -4,13 +4,13 @@ Stefan Hohnstein, July 2016
 
 ----------------------------------------------------------------------------------------------
 
-+---+-+3rdParty				  Any external git repos for 3rd Party Projects/libraries (add via git submodule)
++---+-+3rdParty             Any external git repos for 3rd Party Projects/libraries (add via git submodule)
     |
     +-+documentation
     |   |
     |   +--+3rdParty        (to be) published papers from this project
     |   |   |
-    |   |	+--+papers      paper related to this project
+    |   |   +--+papers      paper related to this project
     |   |
     |   +--+architecture    t.b.d
     |   |
@@ -26,7 +26,7 @@ Stefan Hohnstein, July 2016
     |   +
     |   +--+firmware        All software main applications and firmware for embedded systems (including Xilinx SDK projects, no workspaces!!!)
     |   |
-    |   +--+libs		    Like FreeRTOS, LPCopen, lwip, etc.
+    |   +--+libs            Like FreeRTOS, LPCopen, lwip, etc.
     |   |
     |   +--+modules         
     |   |
@@ -42,17 +42,17 @@ Stefan Hohnstein, July 2016
     |   |
     |   +--+fpga
     |   |   |
-    |   |	+--+ip          IP Block for RTL modules
-    |   |	|
-    |   |	+--+libs        t.b.d.
-    |   |	|
-    |   |	+--+modules     RTL modules
-    |   |	|
-    |   |	+--+pl          Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
-    |   |	|
-    |   |	+--+sandbox     Use this sandbox for testing and matlab testings/development
-    |   |	|
-    |   |	+--+tests       Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
+    |   |   +--+ip          IP Block for RTL modules
+    |   |   |
+    |   |   +--+libs        t.b.d.
+    |   |   |
+    |   |   +--+modules     RTL modules
+    |   |   |
+    |   |   +--+pl          Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
+    |   |   |
+    |   |   +--+sandbox     Use this sandbox for testing and matlab testings/development
+    |   |   |
+    |   |   +--+tests       Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
     |   |
     |   +--+mechanical      e.g. Autodesk Inventor projects, each project in separate sub-folder
     |
@@ -62,7 +62,7 @@ Stefan Hohnstein, July 2016
     |   |
     |   +--+libs
     |   |
-    |   +--+main?			Main Scripts in subfolders for Matlab "Applications"
+    |   +--+main?           Main Scripts in subfolders for Matlab "Applications"
     |   |
     |   +--+modules
     |   |
