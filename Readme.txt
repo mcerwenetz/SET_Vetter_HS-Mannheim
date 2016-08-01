@@ -23,7 +23,7 @@ Stefan Hohnstein, July 2016
     |   +--+thesis          Any thesis or Studienarbeit written based on this project
     |
     +-+firmware             
-    |   +
+    |   |
     |   +--+firmware        All software main applications and firmware for embedded systems (including Xilinx SDK projects, no workspaces!!!)
     |   |
     |   +--+libs            Like FreeRTOS, LPCopen, lwip, etc.
@@ -33,26 +33,26 @@ Stefan Hohnstein, July 2016
     |   +--+sandbox         Use this sandbox for testing
     |   |
     |   +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
+    |   
+    +--+fpga
+    |   |
+    |   +--+ip          IP Block for RTL modules
+    |   |
+    |   +--+libs        t.b.d.
+    |   |
+    |   +--+modules     RTL modules
+    |   |
+    |   +--+pl          Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
+    |   |
+    |   +--+sandbox     Use this sandbox for testing and matlab testings/development
+    |   |
+    |   +--+tests       Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
     |
     +-+hardware
-    |   +
+    |   |
     |   +--+datasheets      Any datasheet related to the hardware components, add sub-folder as categories if applicable
     |   |
     |   +--+electrical      e.g. eagle files, each project in separate sub-folder
-    |   |
-    |   +--+fpga
-    |   |   |
-    |   |   +--+ip          IP Block for RTL modules
-    |   |   |
-    |   |   +--+libs        t.b.d.
-    |   |   |
-    |   |   +--+modules     RTL modules
-    |   |   |
-    |   |   +--+pl          Add Programmable Logic Projects here, each project like in the apps Folder as sub-folder (no Xilinx SDK projects here)
-    |   |   |
-    |   |   +--+sandbox     Use this sandbox for testing and matlab testings/development
-    |   |   |
-    |   |   +--+tests       Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
     |   |
     |   +--+mechanical      e.g. Autodesk Inventor projects, each project in separate sub-folder
     |
@@ -71,7 +71,7 @@ Stefan Hohnstein, July 2016
     |   +--+tests           Here should only be tests to test modules or apps, e.g. for Qt based applications here should be the automated test projects
     |
     +-+software             Folder contents as described by Timo
-        +
+        |
         +--+apps            All software main applications and firmware for embedded systems (including Xilinx SDK projects, no workspaces!!!)
         |
         +--+libs
