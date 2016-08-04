@@ -4,7 +4,7 @@ build_checkout:
     - linux
     - shell
   script:
-    - qmake --version
+    - echo success
     
 test_checkout:
   type: test
