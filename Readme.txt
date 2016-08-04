@@ -4,7 +4,7 @@ Stefan Hohnstein, July 2016
 
 ----------------------------------------------------------------------------------------------
 
-+---+-+3rdParty             Any external git repos for 3rd Party Projects/libraries (add via git submodule)
++---+
     |
     +-+documentation
     |   |
@@ -16,7 +16,7 @@ Stefan Hohnstein, July 2016
     |   |
     |   +--+papers          (to be) published papers from this project
     |   |
-    |   +--+reports         Final Reports, Forms, letters, etc. (e.g. documents for BMBF/VDI/etc.)
+    |   +--+reports         Final Reports, Forms, letters, etc. (e.g. documents for BMBF/VDI/etc.) and generated Codedocumentation
     |   |
     |   +--+requirements    t.b.d
     |   |
