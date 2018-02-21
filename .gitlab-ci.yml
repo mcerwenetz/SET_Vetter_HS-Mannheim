@@ -24,7 +24,7 @@ stages:
     untracked: true
     expire_in: 1 day
   before_script:
-    - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset & || echo "Process was already running."
+    - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset || echo "Process was already running." &
   after_script:
     - pkill Xvfb || echo "Process was not running."
 
