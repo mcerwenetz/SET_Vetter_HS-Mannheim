@@ -44,7 +44,7 @@ linux:test:exampleqtquicktest:
   <<: *linux_test_job
   script:
     - cd software/tests/exampleqtquicktest
-    - ./exampleqtquicktest -o results.xml -xml -platform wut?
+    - ./exampleqtquicktest -o results.xml -xml -platform eglfs
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
     - linux:build:exampleqtquicktest
