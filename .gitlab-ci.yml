@@ -1,0 +1,62 @@
+stages:
+  - build
+  - test
+
+## Templates ##
+  
+.linux:build: &linux_build_job
+  stage: build
+  tags: 
+    - linux
+    - shell
+  artifacts:
+    untracked: true
+    expire_in: 1 day
+
+.linux:test: &linux_test_job
+  stage: test
+  tags: 
+    - linux
+    - shell
+  artifacts:
+    untracked: true
+    expire_in: 1 day
+
+## Build the tests ##
+
+linux:build:exampleqtquicktest:
+  <<: *linux_build_job
+  script:
+    - cd software/tests/exampleqtquicktest
+    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
+    - make -j5
+
+linux:build:exampleqttest:
+  <<: *linux_build_job
+  script:
+    - cd software/tests/exampleqttest
+    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage"
+    - make -j5
+
+#Run the tests
+
+linux:test:exampleqtquicktest:
+  <<: *linux_test_job
+  script:
+    - cd software/tests/exampleqtquicktest
+    - ./exampleqtquicktest -o results.xml -xml
+    - gcovr -r ../../ -e .*moc_.+
+  dependencies:
+    - linux:build:exampleqtquicktest
+
+linux:test:exampleqttest:
+  <<: *linux_test_job
+  script:
+    - cd software/tests/exampleqttest
+    - ./exampleqttest -o results.xml -xml
+    - gcovr -r ../../ -e .*moc_.+
+  dependencies:
+    - linux:build:exampleqttest
+
+
+ 

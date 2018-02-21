@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>tst_main.qml</file>
-		<file>tst_guiTest.qml</file>
+        <file>tst_guiTest.qml</file>
     </qresource>
 </RCC>

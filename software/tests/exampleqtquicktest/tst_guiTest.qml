@@ -7,11 +7,13 @@ Rectangle {
     focus: true
 
     MouseArea {
-
-     anchors.fill: rect
-     onClicked: {
-         console.log( "Simulated click: " + mouse.x + " " + mouse.y )
-     }
+        id: mouseArea
+        property bool wasClicked: false
+        anchors.fill: rect
+        onClicked: {
+            console.log( "Simulated click: " + mouse.x + " " + mouse.y )
+            wasClicked = true;
+        }
     }
 
     TestCase {
@@ -19,7 +21,8 @@ Rectangle {
         when: windowShown
 
         function test_key_click() {
-            mouseClick( rect, 10 , 10 )
-       }
+            mouseClick( rect, 10 , 10 );
+            verify(mouseArea.wasClicked, "MouseArea was not clicked!");
+        }
     }
 }

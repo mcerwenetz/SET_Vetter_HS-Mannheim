@@ -2,7 +2,6 @@
 DLLDESTDIR = $$_PRO_FILE_PWD_
 
 #Include modules here that will be tested
-includeAllFiles($$apps_dir/exampleqtapplication)
 
 #remove main files from other projects
 SOURCES ~= s/.*main.cpp/
