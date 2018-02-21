@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-befor_script:
+before_script:
   - pkill Xvfb
   - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset
 
