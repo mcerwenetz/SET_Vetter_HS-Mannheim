@@ -2,9 +2,6 @@ stages:
   - build
   - test
 
-before_script:
-  - Xvfb :99
-  
 after_script:
   - pkill Xvfb
 
@@ -60,6 +57,7 @@ linux:test:exampleqtquicktest:
 linux:test:exampleqttest:
   <<: *linux_test_job
   script:
+    - Xvfb :99 &
     - cd software/tests/exampleqttest
     - ./exampleqttest -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
