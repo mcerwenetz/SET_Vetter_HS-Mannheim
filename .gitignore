@@ -8,3 +8,4 @@ Makefile*
 release
 debug
 data
+.qmake.stash
