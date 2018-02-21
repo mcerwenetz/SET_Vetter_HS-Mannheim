@@ -48,6 +48,7 @@ linux:build:exampleqttest:
 linux:test:exampleqtquicktest:
   <<: *linux_test_job
   script:
+    - Xvfb :99 &
     - cd software/tests/exampleqtquicktest
     - ./exampleqtquicktest -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
@@ -57,7 +58,6 @@ linux:test:exampleqtquicktest:
 linux:test:exampleqttest:
   <<: *linux_test_job
   script:
-    - Xvfb :99 &
     - cd software/tests/exampleqttest
     - ./exampleqttest -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
