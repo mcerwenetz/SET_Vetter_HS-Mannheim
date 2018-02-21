@@ -2,13 +2,6 @@ stages:
   - build
   - test
 
-#before_script:
-#  - pkill Xvfb || echo "Process was not running."
-#  - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset
-
-#after_script:
-#  - pkill Xvfb || echo "Process was not running."
-
 ## Templates ##
   
 .linux:build: &linux_build_job
@@ -30,6 +23,10 @@ stages:
   artifacts:
     untracked: true
     expire_in: 1 day
+  before_script:
+    - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset & || echo "Process was already running."
+  after_script:
+    - pkill Xvfb || echo "Process was not running."
 
 ## Build the tests ##
 
@@ -52,11 +49,9 @@ linux:build:exampleqttest:
 linux:test:exampleqtquicktest:
   <<: *linux_test_job
   script:
-    - Xvfb :99 -screen 0 1920x1024x24 +extension GLX +render -noreset &
     - cd software/tests/exampleqtquicktest
     - ./exampleqtquicktest -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
-    - pkill Xvfb || echo "Process was not running."
   dependencies:
     - linux:build:exampleqtquicktest
 
