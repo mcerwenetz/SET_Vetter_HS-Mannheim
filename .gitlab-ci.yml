@@ -2,6 +2,12 @@ stages:
   - build
   - test
 
+before_script:
+  - Xvfb :99
+  
+after_script:
+  - pkill Xvfb
+
 ## Templates ##
   
 .linux:build: &linux_build_job
@@ -15,6 +21,8 @@ stages:
 
 .linux:test: &linux_test_job
   stage: test
+  variables:
+    DISPLAY: ':99'
   tags: 
     - linux
     - shell
@@ -44,7 +52,7 @@ linux:test:exampleqtquicktest:
   <<: *linux_test_job
   script:
     - cd software/tests/exampleqtquicktest
-    - ./exampleqtquicktest -o results.xml -xml -platform eglfs
+    - ./exampleqtquicktest -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
     - linux:build:exampleqtquicktest
