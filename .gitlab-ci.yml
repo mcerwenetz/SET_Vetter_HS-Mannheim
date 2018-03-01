@@ -41,6 +41,15 @@ linux:build:exampleqttest:
     - cd software/tests/exampleqttest
     - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage"
     - make -j5
+    
+## Praktikum 2   
+linux:build:praktikum2Test:
+  <<: *linux_build_job
+  script:
+    - cd software/tests/praktikum2Test
+    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
+    - make -j5
+    
 
 #Run the tests
 
@@ -62,5 +71,14 @@ linux:test:exampleqttest:
   dependencies:
     - linux:build:exampleqttest
 
+    ## Praktikum 2
+linux:test:praktikum2Test:
+  <<: *linux_test_job
+  script:
+    - cd software/tests/praktikum2Test
+    - ./praktikum2Test -o results.xml -xml
+    - gcovr -r ../../ -e .*moc_.+
+  dependencies:
+    - linux:build:praktikum2Test
 
  

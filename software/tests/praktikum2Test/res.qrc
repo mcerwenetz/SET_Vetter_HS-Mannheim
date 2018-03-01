@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tst_testcaseTest.qml</file>
+    </qresource>
+</RCC>
