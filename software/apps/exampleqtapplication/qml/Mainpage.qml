@@ -6,6 +6,8 @@ ApplicationWindow {
     width: 1024
     height: 768
 
+    property alias tst_mainStackView: mainStackView
+
     StackView {
         id: mainStackView
         anchors.fill: parent
