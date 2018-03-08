@@ -43,10 +43,10 @@ linux:build:exampleqttest:
     - make -j5
     
 ## Praktikum 2   
-linux:build:praktikum2Test:
+linux:build:praktikum2:
   <<: *linux_build_job
   script:
-    - cd software/tests/praktikum2Test
+    - cd software/tests/praktikum2test
     - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
     - make -j5
     
@@ -72,13 +72,13 @@ linux:test:exampleqttest:
     - linux:build:exampleqttest
 
     ## Praktikum 2
-linux:test:praktikum2Test:
+linux:test:praktikum2:
   <<: *linux_test_job
   script:
-    - cd software/tests/praktikum2Test
+    - cd software/tests/praktikum2test
     - ./praktikum2Test -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
-    - linux:build:praktikum2Test
+    - linux:build:praktikum2test
 
  
