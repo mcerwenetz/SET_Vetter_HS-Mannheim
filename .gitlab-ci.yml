@@ -79,6 +79,6 @@ linux:test:praktikum2:
     - ./praktikum2Test -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
-    - linux:build:praktikum2test
+    - linux:build:praktikum2
 
  
