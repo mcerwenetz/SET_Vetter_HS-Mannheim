@@ -71,7 +71,7 @@ linux:test:exampleqttest:
   dependencies:
     - linux:build:exampleqttest
 
-    ## Praktikum 2
+## Praktikum 2
 linux:test:praktikum2:
   <<: *linux_test_job
   script:
