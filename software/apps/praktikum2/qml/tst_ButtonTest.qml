@@ -28,7 +28,7 @@ Item {
         }
 
         function test_key_click() {
-            // mouseClick( mainpage, 10 , 10 );
+
             mouseClick( button1, 50, 50 )
             verify(testCasae.cklicked===true, "Button nicht gecklicked");
         }
