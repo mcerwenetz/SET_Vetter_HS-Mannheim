@@ -71,14 +71,14 @@ linux:test:exampleqttest:
   dependencies:
     - linux:build:exampleqttest
 
-    ## Praktikum 2
+## Praktikum 2
 linux:test:praktikum2:
   <<: *linux_test_job
   script:
     - cd software/tests/praktikum2test
-    - ./praktikum2Test -o results.xml -xml
+    - ./praktikum2test -o results.xml -xml
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
-    - linux:build:praktikum2test
+    - linux:build:praktikum2
 
  
