@@ -9,6 +9,9 @@ stages:
   tags: 
     - linux
     - shell
+  variables:
+    PATH: /opt/Qt5/5.10.1/gcc_64/bin:/usr/local/bin:/usr/bin:/bin
+    LD_LIBRARY_PATH: /opt/Qt5/5.10.1/gcc_64/lib
   artifacts:
     untracked: true
     expire_in: 1 day
@@ -17,6 +20,8 @@ stages:
   stage: test
   variables:
     DISPLAY: ':99'
+    PATH: /opt/Qt5/5.10.1/gcc_64/bin:/usr/local/bin:/usr/bin:/bin
+    LD_LIBRARY_PATH: /opt/Qt5/5.10.1/gcc_64/lib
   tags: 
     - linux
     - shell
