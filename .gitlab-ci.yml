@@ -57,7 +57,7 @@ linux:test:exampleqtquicktest:
   <<: *linux_test_job
   script:
     - cd software/tests/exampleqtquicktest
-    - ./exampleqtquicktest -o results.xml -xml
+    - ./exampleqtquicktest
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
     - linux:build:exampleqtquicktest
@@ -66,7 +66,7 @@ linux:test:exampleqttest:
   <<: *linux_test_job
   script:
     - cd software/tests/exampleqttest
-    - ./exampleqttest -o results.xml -xml
+    - ./exampleqttest
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
     - linux:build:exampleqttest
@@ -76,7 +76,7 @@ linux:test:praktikum2:
   <<: *linux_test_job
   script:
     - cd software/tests/praktikum2test
-    - ./praktikum2test -o results.xml -xml
+    - ./praktikum2test
     - gcovr -r ../../ -e .*moc_.+
   dependencies:
     - linux:build:praktikum2
