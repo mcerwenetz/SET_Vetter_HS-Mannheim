@@ -12,11 +12,13 @@ OTHER_FILES += $$files($$PWD/tst_*.qml)
 QML_TEST_FILES = $$files($$QML_TEST_MODULE/*.qml)
 
 #setup qml copy 'compiler'
-qml_module_cp.CONFIG = no_link
-qml_module_cp.output = $$PWD/${QMAKE_FILE_BASE}.qml
-qml_module_cp.commands = $(COPY) ${QMAKE_FILE_NAME} ${QMAKE_FILE_OUT}
-qml_module_cp.input = QML_TEST_FILES
-QMAKE_EXTRA_COMPILERS += qml_module_cp
+qmlmodule.CONFIG = no_link target_predeps ordered
+qmlmodule.output = $$PWD/${QMAKE_FILE_BASE}.qml
+qmlmodule.commands = $(COPY) ${QMAKE_FILE_NAME} ${QMAKE_FILE_OUT}
+qmlmodule.name = qmlmodule
+qmlmodule.variable_out = JUNK
+qmlmodule.input = QML_TEST_FILES
+QMAKE_EXTRA_COMPILERS += qmlmodule
 
 #Include project files
 INCLUDEPATH += $$PWD
