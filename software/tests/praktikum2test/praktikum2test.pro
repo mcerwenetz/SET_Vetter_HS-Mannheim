@@ -8,8 +8,17 @@ QML_TEST_MODULE = $$apps_dir/praktikum2/qml
 SOURCES ~= s/.*main.cpp/
 
 #setup test variables
-OTHER_FILES += $$files($$QML_TEST_MODULE/tst_*.qml)
-DEFINES += QML_TEST_MODULE=\\\"$$QML_TEST_MODULE\\\"
+OTHER_FILES += $$files($$PWD/tst_*.qml)
+QML_TEST_FILES = $$files($$QML_TEST_MODULE/*.qml)
+
+#setup qml copy 'compiler'
+qmlmodule.CONFIG = no_link target_predeps ordered
+qmlmodule.output = $$PWD/${QMAKE_FILE_BASE}.qml
+qmlmodule.commands = $(COPY) ${QMAKE_FILE_NAME} ${QMAKE_FILE_OUT}
+qmlmodule.name = qmlmodule
+qmlmodule.variable_out = JUNK
+qmlmodule.input = QML_TEST_FILES
+QMAKE_EXTRA_COMPILERS += qmlmodule
 
 #Include project files
 INCLUDEPATH += $$PWD
