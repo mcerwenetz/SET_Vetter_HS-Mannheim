@@ -8,8 +8,15 @@ QML_TEST_MODULE = $$apps_dir/exampleqtapplication/qml
 SOURCES ~= s/.*main.cpp/
 
 #setup test variables
-OTHER_FILES += $$files($$QML_TEST_MODULE/tst_*.qml)
-DEFINES += QML_TEST_MODULE=\\\"$$QML_TEST_MODULE\\\"
+OTHER_FILES += $$files($$PWD/tst_*.qml)
+QML_TEST_FILES = $$files($$QML_TEST_MODULE/*.qml)
+
+#setup qml copy 'compiler'
+qml_module_cp.CONFIG = no_link
+qml_module_cp.output = $$PWD/${QMAKE_FILE_BASE}.qml
+qml_module_cp.commands = $(COPY) ${QMAKE_FILE_NAME} ${QMAKE_FILE_OUT}
+qml_module_cp.input = QML_TEST_FILES
+QMAKE_EXTRA_COMPILERS += qml_module_cp
 
 #Include project files
 INCLUDEPATH += $$PWD
