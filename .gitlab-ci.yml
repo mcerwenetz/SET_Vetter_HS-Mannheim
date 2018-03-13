@@ -20,6 +20,7 @@ stages:
   tags: 
     - linux
     - shell
+  allow_failure: true
   script:
     - cd software/tests/$TESTPROJECTNAME
     - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
@@ -61,3 +62,66 @@ linux:test:praktikum2:
   variables:
     DISPLAY: ':99'
     TESTPROJECTNAME: 'praktikum2test'
+
+linux:test:praktikum3:
+  <<: *linux_test_job
+  stage: praktikum3
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum3test'
+    
+linux:test:praktikum4:
+  <<: *linux_test_job
+  stage: praktikum4
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum4test'
+
+linux:test:praktikum5:
+  <<: *linux_test_job
+  stage: praktikum5
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum5test'
+
+linux:test:praktikum6:
+  <<: *linux_test_job
+  stage: praktikum6
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum6test'
+
+linux:test:praktikum7:
+  <<: *linux_test_job
+  stage: praktikum7
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum7test'
+
+linux:test:praktikum8:
+  <<: *linux_test_job
+  stage: praktikum8
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum8test'
+
+linux:test:praktikum9:
+  <<: *linux_test_job
+  stage: praktikum9
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum9test'
+
+linux:test:praktikum10:
+  <<: *linux_test_job
+  stage: praktikum10
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum10test'
+
+linux:test:praktikum11:
+  <<: *linux_test_job
+  stage: praktikum11
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum11test'
