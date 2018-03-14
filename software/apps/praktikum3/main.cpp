@@ -2,6 +2,7 @@
 #include <QtQuick>
 //#include <QSensorReading>
 
+// Test
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
