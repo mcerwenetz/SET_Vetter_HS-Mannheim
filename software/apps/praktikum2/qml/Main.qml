@@ -8,20 +8,4 @@ Rectangle {
     height: 300
     property int counter: 0
 
-    RowLayout{
-        anchors.fill: parent
-
-        MyButton{
-            id: button1
-            onMyClicked: {
-                console.log( "button 1 Clicked" )
-                root.counter++;
-            }
-        }
-
-        MyButton{
-            id: button2
-            onMyClicked: console.log( "button 2 Clicked" )
-        }
-    }
 }
