@@ -1,84 +1,127 @@
 stages:
-  - build
-  - test
+  - repoTest
+  - praktikum1
+  - praktikum2
+  - praktikum3
+  - praktikum4
+  - praktikum5
+  - praktikum6
+  - praktikum7
+  - praktikum8
+  - praktikum9
+  - praktikum10
+  - praktikum11
 
 ## Templates ##
   
-.linux:build: &linux_build_job
-  stage: build
-  tags: 
-    - linux
-    - shell
-  artifacts:
-    untracked: true
-    expire_in: 1 day
-
 .linux:test: &linux_test_job
-  stage: test
   variables:
     DISPLAY: ':99'
   tags: 
     - linux
     - shell
+  allow_failure: true
+  script:
+    - cd software/tests/$TESTPROJECTNAME
+    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
+    - make -j5
+    - ./$TESTPROJECTNAME
+    - gcovr -r ../../ -e .*moc_.+
   artifacts:
     untracked: true
     expire_in: 1 day
   before_script:
     - Xvfb :99 -screen 0 1920x1080x24 +extension GLX +render -noreset || echo "Process was already running."
 
-## Build the tests ##
-
-linux:build:exampleqtquicktest:
-  <<: *linux_build_job
-  script:
-    - cd software/tests/exampleqtquicktest
-    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
-    - make -j5
-
-linux:build:exampleqttest:
-  <<: *linux_build_job
-  script:
-    - cd software/tests/exampleqttest
-    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage"
-    - make -j5
-    
-## Praktikum 2   
-linux:build:praktikum2:
-  <<: *linux_build_job
-  script:
-    - cd software/tests/praktikum2test
-    - qmake "QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage" "QMAKE_LFLAGS += -fprofile-arcs -ftest-coverage" "CONFIG += doxygen"
-    - make -j5
-    
-
-#Run the tests
+## Run and build the tests ##
 
 linux:test:exampleqtquicktest:
   <<: *linux_test_job
-  script:
-    - cd software/tests/exampleqtquicktest
-    - ./exampleqtquicktest
-    - gcovr -r ../../ -e .*moc_.+
-  dependencies:
-    - linux:build:exampleqtquicktest
+  stage: repoTest
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'exampleqtquicktest'
 
 linux:test:exampleqttest:
   <<: *linux_test_job
-  script:
-    - cd software/tests/exampleqttest
-    - ./exampleqttest
-    - gcovr -r ../../ -e .*moc_.+
-  dependencies:
-    - linux:build:exampleqttest
+  stage: repoTest
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'exampleqttest'
 
-## Praktikum 2
+linux:test:praktikum1:
+  <<: *linux_test_job
+  stage: praktikum1
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum1test'
+
 linux:test:praktikum2:
   <<: *linux_test_job
-  script:
-    - cd software/tests/praktikum2test
-    - ./praktikum2test
-    - gcovr -r ../../ -e .*moc_.+
-  dependencies:
-    - linux:build:praktikum2
+  stage: praktikum2
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum2test'
 
- 
+linux:test:praktikum3:
+  <<: *linux_test_job
+  stage: praktikum3
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum3test'
+    
+linux:test:praktikum4:
+  <<: *linux_test_job
+  stage: praktikum4
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum4test'
+
+linux:test:praktikum5:
+  <<: *linux_test_job
+  stage: praktikum5
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum5test'
+
+linux:test:praktikum6:
+  <<: *linux_test_job
+  stage: praktikum6
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum6test'
+
+linux:test:praktikum7:
+  <<: *linux_test_job
+  stage: praktikum7
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum7test'
+
+linux:test:praktikum8:
+  <<: *linux_test_job
+  stage: praktikum8
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum8test'
+
+linux:test:praktikum9:
+  <<: *linux_test_job
+  stage: praktikum9
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum9test'
+
+linux:test:praktikum10:
+  <<: *linux_test_job
+  stage: praktikum10
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum10test'
+
+linux:test:praktikum11:
+  <<: *linux_test_job
+  stage: praktikum11
+  variables:
+    DISPLAY: ':99'
+    TESTPROJECTNAME: 'praktikum11test'
