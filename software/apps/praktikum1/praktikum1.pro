@@ -4,7 +4,7 @@ QT += quick qml
 #Include project files
 INCLUDEPATH += $$PWD
 
-SOURCES += main.cpp
+SOURCES += main.cpp 
 
 HEADERS +=
 
@@ -12,8 +12,8 @@ RESOURCES += qml/qml.qrc
 
 OTHER_FILES +=
 
-#use c++11 compiler flags
-CONFIG += c++11 
+#use c++17 compiler flags
+CONFIG += c++17 
 
 #additional libraries (configured with the feature files in the qmake folder) - libs has to be at the end of the config var
 #CONFIG += opencv libs
