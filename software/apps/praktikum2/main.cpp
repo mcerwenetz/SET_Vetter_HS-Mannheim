@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QtQuick>
-
+//main.cpp
 // Main-Funktion
 int main(int argc, char* argv[])
 {
