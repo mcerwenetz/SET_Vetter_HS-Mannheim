@@ -3,15 +3,14 @@ DLLDESTDIR = $$_PRO_FILE_PWD_
 
 #Include modules here that will be tested
 include($$modules_dir/patient/patient.pri)
-include($$modules_dir/dataBase/dataBase.pri)
+#include($$modules_dir/dataBase/dataBase.pri)
 
 #Include project files
 INCLUDEPATH += $$PWD
 
 SOURCES +=  main.cpp
 
-HEADERS +=  DataBaseTest.h \
-            PatientTest.h
+HEADERS +=  PatientTest.h
 
 RESOURCES += 
 
