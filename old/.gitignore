@@ -1,0 +1,12 @@
+*build*
+*.user*
+*.dll
+*.so
+*.exe
+*.a
+*.qmlc
+Makefile*
+release
+debug
+data
+.qmake.stash
