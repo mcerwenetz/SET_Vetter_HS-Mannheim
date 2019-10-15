@@ -29,20 +29,19 @@ Window {
         }
         Slider{
             id: voltageslider
-            from: 1000
+            from: 0
             to: 24000
-            stepSize: 100
             onValueChanged: {
                 powersupply.voltage=value;
             }
         }
         Label{
-            text: voltageslider.value + "mV"
+            text: powersupply.voltage + "mV"
         }
     }
     Row{
-        x: 46
-        y: 209
+        anchors.top: voltage_row.bottom
+        anchors.left: voltage_row.left
         width: 547
         height: 40
         id: current_row
@@ -52,20 +51,41 @@ Window {
         }
         Slider{
             id: currentslider
-            from: 1000
+            from: 0
             to: 24000
-            stepSize: 100
             onValueChanged: {
                 powersupply.current=value;
             }
         }
         Label{
-            text: currentslider.value + "mA"
+            text: powersupply.current + "mA"
         }
     }
     Row{
-        x: 46
-        y: 255
+        anchors.top: current_row.bottom
+        anchors.left: current_row.left
+        width: 547
+        height: 40
+        id: power_limit_row
+        Text {
+            id: power_limit_text
+            text: qsTr("PowerLimit:")
+        }
+        Slider{
+            id: power_limit_slider
+            from: 0
+            to: 24
+            onValueChanged: {
+                powersupply.powerlimit = value
+            }
+        }
+        Label{
+            text: powersupply.powerlimit + "W"
+        }
+    }
+    Row{
+        anchors.top: power_limit_row.bottom
+        anchors.left: power_limit_row.left
         width: 547
         height: 40
         id: power_row
@@ -103,6 +123,10 @@ Window {
         onPowerChanged:
         {
             console.log("Power Changed " + powersupply.power)
+        }
+        onPowerlimitChanged:
+        {
+            console.log("Powerlimit Changed " + powersupply.powerlimit)
         }
     }
 }
