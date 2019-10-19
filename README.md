@@ -10,6 +10,3 @@ Es ist kein Ersatz um Sich auf Testate oder Prüfungen vorzubereiten. Bitte vers
 Die Comments in dem Code sind meistens spärlich um nicht zu sagen nicht vorhanden. Ich habe jetzt noch keine Doku angefertigt. Da das im Laufe des Semesters aber noch gelehrt wird bin ich zuversichtlich das nachzureichen.
 
 Leider gibt es kein Skript vom Prof, sondern nur siene Vorlesungs-Powerpoint-Folien. Sehr schade, denn so ist die Eintrittshürde enorm, wenn man noch nie damit zu tun hatte.
-
-
-test
