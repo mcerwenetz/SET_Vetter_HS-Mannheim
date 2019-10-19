@@ -33,7 +33,14 @@ public:
 	{
 		return((this.x*v.x)+(this.y*v.y)+(this.y*v.y));
 	}
-	Vector cross(const Vector& v) const;
+	Vector cross(const Vector& v) const
+	{
+		Vector result& = new Vector;
+		result.x=((this.y*v.z)-(this.z*v.y));
+		result.y=((this.z*v.x)-(this.x*v.z));
+		result.z=((this.x*v.y)+(this.y*v.x));
+		return result;
+	}
 	void print() const;
 }
 	
