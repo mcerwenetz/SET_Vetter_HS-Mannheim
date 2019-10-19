@@ -17,7 +17,12 @@ public:
 	{
 		return m_z;
 	}
-	void add (const Vector& v);
+	void add (const Vector& v)
+	{
+		this.m_x=v.m_x;
+		this.m_y=v.m_y;
+		this.m_z=v.m_z;
+	}
 	void sub (const Vector& v);
 	double dot (const Vector& v) const;
 	Vector cross(const Vector& v) const;
