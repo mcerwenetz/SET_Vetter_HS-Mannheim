@@ -47,5 +47,9 @@ public:
 		printf("%lf \n", m_y;)
 		printf("%lf \n", m_z;)
 	}
+	void garbage_function()
+	{
+		printf("I am printing garbage \n");
+	}
 }
 	
