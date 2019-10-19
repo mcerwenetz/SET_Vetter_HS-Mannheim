@@ -19,11 +19,16 @@ public:
 	}
 	void add (const Vector& v)
 	{
-		this.m_x=v.m_x;
-		this.m_y=v.m_y;
-		this.m_z=v.m_z;
+		this.m_x+=v.m_x;
+		this.m_y+=v.m_y;
+		this.m_z+=v.m_z;
 	}
-	void sub (const Vector& v);
+	void sub (const Vector& v)
+	{
+		this.m_x-=v.m_x;
+		this.m_y-=v.m_y;
+		this.m_z-=v.m_z;
+	}
 	double dot (const Vector& v) const;
 	Vector cross(const Vector& v) const;
 	void print() const;
