@@ -41,6 +41,11 @@ public:
 		result.z=((this.x*v.y)+(this.y*v.x));
 		return result;
 	}
-	void print() const;
+	void print() const
+	{
+		printf("%lf \n", m_x;)
+		printf("%lf \n", m_y;)
+		printf("%lf \n", m_z;)
+	}
 }
 	
