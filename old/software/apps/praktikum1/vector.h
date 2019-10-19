@@ -13,7 +13,10 @@ public:
 	{
 		return m_y;
 	}
-	double getZ();
+	double getZ()
+	{
+		return m_z;
+	}
 	void add (const Vector& v);
 	void sub (const Vector& v);
 	double dot (const Vector& v) const;
