@@ -29,7 +29,10 @@ public:
 		this.m_y-=v.m_y;
 		this.m_z-=v.m_z;
 	}
-	double dot (const Vector& v) const;
+	double dot (const Vector& v) const
+	{
+		return((this.x*v.x)+(this.y*v.y)+(this.y*v.y));
+	}
 	Vector cross(const Vector& v) const;
 	void print() const;
 }
