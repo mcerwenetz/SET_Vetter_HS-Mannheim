@@ -49,7 +49,7 @@ public:
 	}
 	void garbage_function()
 	{
-		printf("I am printing garbage \n");
+		printf("I am printing useful facts  \n");
 	}
 }
 	
