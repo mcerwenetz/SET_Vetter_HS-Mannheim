@@ -13,12 +13,6 @@ Window {
 
         model: MyModel {}
         delegate: MyDel {}
-//        delegate: Item{
-//            //    anchors.fill: parent
-//                Text {
-//                    text: name
-//                }
-//            }
     }
 }
 
