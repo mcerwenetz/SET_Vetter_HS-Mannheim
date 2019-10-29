@@ -29,3 +29,5 @@ QML_IMPORT_PATH += $$plugin_dir
 
 #copy the executable to the source folder
 DLLDESTDIR = $$_PRO_FILE_PWD_
+
+DISTFILES +=
