@@ -18,7 +18,7 @@ Rectangle{
         }
         onReleased: {
             parent.scale=1.0
-            image.opacity=0.3
+//            image.opacity=0.3
         }
     }
 
@@ -33,12 +33,11 @@ Rectangle{
 //        }
         Column{
             id: column
-            Text { text: 'Titel: ' + titel }
-            Text { text: 'Vorname: ' + vorname }
-            Text { text: 'Nachname: ' + nachname }
-            Text { text: 'Beruf: ' + beruf }
-            Text { text: 'Age: ' + alter }
-            Text { text: 'Model Index: ' + index }
+            Text { text: 'Vorname: ' + modelData.forename }
+            Text { text: 'Nachname: ' + modelData.name }
+            Text { text: 'Kurs: ' + modelData.course }
+            Text { text: 'Alter: ' + modelData.age }
+//            Text { text: 'Model Index: ' + index }
         }
     }
 }

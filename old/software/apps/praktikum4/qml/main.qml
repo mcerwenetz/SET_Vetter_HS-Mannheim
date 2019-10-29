@@ -13,13 +13,15 @@ ApplicationWindow {
         var request = new XMLHttpRequest()
 
         request.open('GET', 'qrc:/Kommilitonen.txt')
-        request.overrideMimeType('text/plain; charset=x-user-defined')
+//        request.overrideMimeType('text/plain; charset=x-user-defined')
         request.onreadystatechange = function(event){
-            if(request.readyState == XMLHttpRequest.DONE){
+
+            if(request.readyState === XMLHttpRequest.DONE){
                 console.log(request.responseText)
                 view.model = JSON.parse(request.responseText)
             }
         }
+        request.send();
     }
     
     ListView{
@@ -27,14 +29,14 @@ ApplicationWindow {
 
         anchors { fill: parent; margins: 2 }
 
-        model: KommiModel {}
+//        model: KommiModel {}
         delegate: KommiDelegate {}
 
         spacing: 4
         cacheBuffer: 50
     }
-//    Component.onCompleted: {
-//        root.visible = true
-//        readFile();
-//    }
+    Component.onCompleted: {
+        root.visible = true
+        readFile();
+    }
 }
