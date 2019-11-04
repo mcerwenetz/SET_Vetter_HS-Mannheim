@@ -40,5 +40,9 @@ QDate Patient::get_birthday(){
 
 void Patient::set_birthday(QDate n_bday)
 {
+    if(n_bday <= QDate::currentDate().addYears(-150).addDays(-1) || n_bday >= QDate::currentDate().addDays(2) )
+    {
+        return;
+    }
     birthday=n_bday;
 }
