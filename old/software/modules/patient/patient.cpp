@@ -1,8 +1,9 @@
 #include "patient.h"
 
-Patient::Patient()
-{
-
+Patient::Patient(){
+    id=0;
+    forename="unknown";
+    lastname="unknown";
 }
 Patient::~Patient(){
 
@@ -31,4 +32,13 @@ void Patient::set_forename(QString n_fname)
 void Patient::set_lastname(QString n_lname)
 {
     this->lastname=n_lname;
+}
+
+QDate Patient::get_birthday(){
+    return birthday;
+}
+
+void Patient::set_birthday(QDate n_bday)
+{
+    birthday=n_bday;
 }

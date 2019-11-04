@@ -20,7 +20,10 @@ private slots:
     void constructorTest()
     {
 
-        QCOMPARE( 10, 10 );
+       Patient p;
+       QCOMPARE(p.get_id(), 0);
+       QVERIFY (p.get_forename() == "unknown");
+       QVERIFY (p.get_lastname() == "unknown");
     }
 
     ///
