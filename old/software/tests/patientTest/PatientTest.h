@@ -40,6 +40,20 @@ private slots:
 
     }
 
+    void forenameTest(){
+        Patient p;
+
+        const QString s1 = "AbCdEfG";
+        const QString s2 = "Peter";
+
+        p.set_forename(s1);
+        QCOMPARE( p.get_forename(), s1);
+
+        p.set_forename(s2);
+        QVERIFY(p.get_forename() != s1);
+        QCOMPARE( p.get_forename(), s2);
+
+    }
 };
 
 #endif // PATIENT_TEST_H
