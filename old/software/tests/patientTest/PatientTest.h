@@ -31,6 +31,12 @@ private slots:
     ///
     void idTest()
     {
+        Patient p;
+        p.set_id( 10 );
+        QCOMPARE( p.get_id(), 10);
+
+        p.set_id(1000);
+        QCOMPARE( p.get_id(), 1000);
 
     }
 
