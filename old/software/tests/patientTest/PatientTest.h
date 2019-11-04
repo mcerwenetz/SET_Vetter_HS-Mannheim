@@ -54,6 +54,20 @@ private slots:
         QCOMPARE( p.get_forename(), s2);
 
     }
+
+    void familyNameTest(){
+        Patient p;
+
+        const QString s1 = "Kaiser";
+        const QString s2 = "Müller";
+
+        p.set_lastname(s1);
+        QCOMPARE( p.get_lastname(), s1);
+
+        p.set_lastname(s2);
+        QVERIFY(p.get_lastname() != s1);
+        QCOMPARE( p.get_lastname(), s2);
+    }
 };
 
 #endif // PATIENT_TEST_H
