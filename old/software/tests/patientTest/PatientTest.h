@@ -3,7 +3,7 @@
 
 #include <QtTest>
 #include <QString>
-#include "patient.h"
+#include "Patient.h"
 
 ///
 /// \brief The PatientTest class
@@ -39,7 +39,9 @@ private slots:
         QCOMPARE( p.id(), 1000);
 
     }
-
+    ///
+    /// \brief forenameTest
+    ///
     void forenameTest(){
         Patient p;
 
@@ -54,7 +56,9 @@ private slots:
         QCOMPARE( p.forename(), s2);
 
     }
-
+    ///
+    /// \brief familyNameTest
+    ///
     void familyNameTest(){
         Patient p;
 
@@ -68,7 +72,9 @@ private slots:
         QVERIFY(p.familyName() != s1);
         QCOMPARE( p.familyName(), s2);
     }
-
+    ///
+    /// \brief dateOfBirthTest
+    ///
     void dateOfBirthTest()
     {
         Patient p;

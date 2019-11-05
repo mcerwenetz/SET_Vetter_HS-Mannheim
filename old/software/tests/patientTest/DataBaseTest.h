@@ -4,7 +4,7 @@
 #include <qttest>
 #include <qdebug>
 #include <qlist>
-#include "Patient.h"
+#include "patient.h"
 #include "DataBase.h"
 
 class DataBaseTest : public QObject
