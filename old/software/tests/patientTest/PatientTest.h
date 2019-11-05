@@ -21,9 +21,9 @@ private slots:
     {
 
        Patient p;
-       QCOMPARE(p.get_id(), 0);
-       QVERIFY (p.get_forename() == "unknown");
-       QVERIFY (p.get_lastname() == "unknown");
+       QCOMPARE(p.id(), 0);
+       QVERIFY (p.forename() == "unknown");
+       QVERIFY (p.familyName() == "unknown");
     }
 
     ///
@@ -32,11 +32,11 @@ private slots:
     void idTest()
     {
         Patient p;
-        p.set_id( 10 );
-        QCOMPARE( p.get_id(), 10);
+        p.setId( 10 );
+        QCOMPARE( p.id(), 10);
 
-        p.set_id(1000);
-        QCOMPARE( p.get_id(), 1000);
+        p.setId(1000);
+        QCOMPARE( p.id(), 1000);
 
     }
 
@@ -46,12 +46,12 @@ private slots:
         const QString s1 = "AbCdEfG";
         const QString s2 = "Peter";
 
-        p.set_forename(s1);
-        QCOMPARE( p.get_forename(), s1);
+        p.setForename(s1);
+        QCOMPARE( p.forename(), s1);
 
-        p.set_forename(s2);
-        QVERIFY(p.get_forename() != s1);
-        QCOMPARE( p.get_forename(), s2);
+        p.setForename(s2);
+        QVERIFY(p.forename() != s1);
+        QCOMPARE( p.forename(), s2);
 
     }
 
@@ -61,12 +61,12 @@ private slots:
         const QString s1 = "Kaiser";
         const QString s2 = "Müller";
 
-        p.set_lastname(s1);
-        QCOMPARE( p.get_lastname(), s1);
+        p.setFamilyName(s1);
+        QCOMPARE( p.familyName(), s1);
 
-        p.set_lastname(s2);
-        QVERIFY(p.get_lastname() != s1);
-        QCOMPARE( p.get_lastname(), s2);
+        p.setFamilyName(s2);
+        QVERIFY(p.familyName() != s1);
+        QCOMPARE( p.familyName(), s2);
     }
 
     void dateOfBirthTest()
@@ -82,26 +82,26 @@ private slots:
         const QDate lastValidDate = today.addYears(-150);
         const QDate firstInValidDate = today.addYears(-150).addDays(-1);
 
-        p.set_birthday(today);
-        QCOMPARE(p.get_birthday(), today);
+        p.setDateOfBirth(today);
+        QCOMPARE(p.dateOfBirth(), today);
 
-        p.set_birthday(tomorrow);
-        QCOMPARE(p.get_birthday(), tomorrow);
+        p.setDateOfBirth(tomorrow);
+        QCOMPARE(p.dateOfBirth(), tomorrow);
 
-        p.set_birthday(yesterday);
-        QCOMPARE(p.get_birthday(), yesterday);
+        p.setDateOfBirth(yesterday);
+        QCOMPARE(p.dateOfBirth(), yesterday);
 
-        p.set_birthday(validDate);
-        QCOMPARE(p.get_birthday(), validDate);
+        p.setDateOfBirth(validDate);
+        QCOMPARE(p.dateOfBirth(), validDate);
 
-        p.set_birthday(lastValidDate);
-        QCOMPARE(p.get_birthday(), lastValidDate);
+        p.setDateOfBirth(lastValidDate);
+        QCOMPARE(p.dateOfBirth(), lastValidDate);
 
-        p.set_birthday(theDayAfterTomorrow);
-        QVERIFY(p.get_birthday() != theDayAfterTomorrow);
+        p.setDateOfBirth(theDayAfterTomorrow);
+        QVERIFY(p.dateOfBirth() != theDayAfterTomorrow);
 
-        p.set_birthday(firstInValidDate);
-        QVERIFY(p.get_birthday() != firstInValidDate);
+        p.setDateOfBirth(firstInValidDate);
+        QVERIFY(p.dateOfBirth() != firstInValidDate);
 
 
     }

@@ -10,7 +10,8 @@ INCLUDEPATH += $$PWD
 
 SOURCES +=  main.cpp
 
-HEADERS +=  PatientTest.h
+HEADERS +=  PatientTest.h \
+#    DataBaseTest.h
 
 RESOURCES += 
 
@@ -29,4 +30,6 @@ CONFIG += c++11
 #test lib flags
 CONFIG += qmltestcase buildsystem
 QT += testlib
+
+DISTFILES +=
 

@@ -1,48 +1,48 @@
 #include "patient.h"
 
 Patient::Patient(){
-    id=0;
-    forename="unknown";
-    lastname="unknown";
+    m_id=0;
+    m_forename="unknown";
+    m_familyName="unknown";
 }
 Patient::~Patient(){
 
 }
-int Patient::get_id()
+int Patient::id() const
 {
-    return this->id;
+    return this->m_id;
 }
 
-QString Patient::get_forename()
+QString Patient::forename() const
 {
-    return (this->forename);
+    return (this->m_forename);
 }
-QString Patient::get_lastname()
+QString Patient::familyName() const
 {
-    return this->lastname;
+    return this->m_familyName;
 }
-void Patient::set_id(int n_id)
+void Patient::setId(int n_id)
 {
-    this->id=n_id;
+    this->m_id=n_id;
 }
-void Patient::set_forename(QString n_fname)
+void Patient::setForename(QString n_fname)
 {
-    this->forename=n_fname;
+    this->m_forename=n_fname;
 }
-void Patient::set_lastname(QString n_lname)
+void Patient::setFamilyName(QString n_lname)
 {
-    this->lastname=n_lname;
-}
-
-QDate Patient::get_birthday(){
-    return birthday;
+    this->m_familyName=n_lname;
 }
 
-void Patient::set_birthday(QDate n_bday)
+QDate Patient::dateOfBirth(){
+    return m_dateOfBirth;
+}
+
+void Patient::setDateOfBirth(QDate dateOfBirth)
 {
-    if(n_bday <= QDate::currentDate().addYears(-150).addDays(-1) || n_bday >= QDate::currentDate().addDays(2) )
+    if(dateOfBirth <= QDate::currentDate().addYears(-150).addDays(-1) || dateOfBirth >= QDate::currentDate().addDays(2) )
     {
         return;
     }
-    birthday=n_bday;
+    m_dateOfBirth=dateOfBirth;
 }
