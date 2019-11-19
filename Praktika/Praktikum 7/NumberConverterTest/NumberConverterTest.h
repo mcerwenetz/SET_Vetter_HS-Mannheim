@@ -45,6 +45,20 @@ private slots:
         checkcorrect(a);
     }
 
+//    void binformatTest()
+//    {
+//        NumberConverter a;
+//        a.setBin("1.1111");
+//        QCOMPARE(a.bin(),"11111");
+//    }
+
+    void binformatTest2()
+    {
+        NumberConverter a;
+        a.setBin("1.1111.1111");
+        QCOMPARE(a.bin(), QString("1.1111.1111"));
+    }
+
     
 };
 

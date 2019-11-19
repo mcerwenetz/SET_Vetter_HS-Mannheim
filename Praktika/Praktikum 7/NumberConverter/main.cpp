@@ -5,11 +5,11 @@
 int main(int argc, char *argv[])
 {
     NumberConverter nbr;
-    nbr.setBin("10");
-    nbr.bin();
-    nbr.dez();
-    nbr.hex();
-    nbr.oct();
+//    nbr.setBin("10");
+//    nbr.bin();
+//    nbr.dez();
+//    nbr.hex();
+//    nbr.oct();
 
 //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 

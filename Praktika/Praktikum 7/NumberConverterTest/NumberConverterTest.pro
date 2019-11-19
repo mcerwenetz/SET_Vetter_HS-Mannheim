@@ -2,7 +2,7 @@
 DLLDESTDIR = $$_PRO_FILE_PWD_
 
 #Include modules here that will be tested
-include(D:\Google Drive\Studium\3TIB\SET\set-labor\Praktika\Praktikum 7\NumberConverter\numberconverter.pri)
+include($$PWD\..\NumberConverter\numberconverter.pri)
 
 #Include project files
 INCLUDEPATH += $$PWD

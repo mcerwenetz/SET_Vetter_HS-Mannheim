@@ -37,7 +37,6 @@ public:
     QString oct();
     void setOct(QString value);
 
-//    void update(int value);
 
 signals:
     void binChanged();
@@ -47,5 +46,6 @@ signals:
 
 
 };
+
 
 #endif // NUMBERCONVERTER_H
