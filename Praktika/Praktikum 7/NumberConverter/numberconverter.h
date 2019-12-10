@@ -8,10 +8,10 @@ class NumberConverter : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString bin READ bin WRITE setBin NOTIFY binChanged)
-    Q_PROPERTY(QString hex READ hex WRITE setHex NOTIFY hexChanged)
-    Q_PROPERTY(QString oct READ oct WRITE setOct NOTIFY octChanged)
-    Q_PROPERTY(QString dez READ dez WRITE setDez NOTIFY dezChanged)
+    Q_PROPERTY(QString bin READ bin WRITE setBin NOTIFY valueChanged)
+    Q_PROPERTY(QString hex READ hex WRITE setHex NOTIFY valueChanged)
+    Q_PROPERTY(QString oct READ oct WRITE setOct NOTIFY valueChanged)
+    Q_PROPERTY(QString dez READ dez WRITE setDez NOTIFY valueChanged)
 
     QString m_value;
 
@@ -39,10 +39,11 @@ public:
 
 
 signals:
-    void binChanged();
-    void hexChanged();
-    void dezChanged();
-    void octChanged();
+//    void binChanged();
+//    void hexChanged();
+//    void dezChanged();
+//    void octChanged();
+    void valueChanged();
 
 
 };

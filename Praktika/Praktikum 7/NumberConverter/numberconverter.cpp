@@ -26,8 +26,15 @@ QString NumberConverter::bin()
 void NumberConverter::setBin(QString value)
 {
     QString toSet=formatBinIn(value);
-    m_value = QString::number(toSet.toInt(nullptr,2),10);
-    emit binChanged();
+    QString localval = QString::number(toSet.toInt(nullptr,2),10);
+    //Check if m_value already is value in textfield
+    //If we would not check  we'd encounter a Binding loop
+    if(m_value == localval)
+        return;
+    else{
+        m_value=localval;
+        emit valueChanged();
+    }
 }
 
 QString NumberConverter::hex()
@@ -37,8 +44,13 @@ QString NumberConverter::hex()
 
 void NumberConverter::setHex(QString value)
 {
-    m_value = QString::number(value.toInt(nullptr,16),10);
-    emit hexChanged();
+    QString localval = QString::number(value.toInt(nullptr,16),10);
+    if(m_value == localval)
+        return;
+    else{
+        m_value = localval;
+        emit valueChanged();
+    }
 }
 
 QString NumberConverter::dez()
@@ -48,14 +60,21 @@ QString NumberConverter::dez()
 
 void NumberConverter::setDez(QString value)
 {
-    m_value=value;
-    emit hexChanged();
+    if(m_value == value)
+        return;
+    else
+        m_value = value;
+    emit valueChanged();
 }
 
 void NumberConverter::setOct(QString value)
 {
-    m_value = QString::number(value.toInt(nullptr,8),10);
-    emit octChanged();
+    QString localval = QString::number(value.toInt(nullptr,8),10);
+    if(m_value == localval)
+        return;
+    else
+        m_value = localval;
+    emit valueChanged();
 }
 
 QString NumberConverter::oct()
