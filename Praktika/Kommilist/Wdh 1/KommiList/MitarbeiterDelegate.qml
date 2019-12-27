@@ -17,10 +17,10 @@ Rectangle{
         spacing: 20
         Column{
             id:column
-            Text{text: "Vorname:" +vorname}
-            Text{text: "Nachname:" +nachname}
-            Text{text: "Beruf:" + beruf}
-            Text{text: "Alter:" +alter}
+            Text{text: "Vorname:" +modelData.vorname}
+            Text{text: "Nachname:" +modelData.nachname}
+            Text{text: "Beruf:" + modelData.beruf}
+            Text{text: "Alter:" +modelData.alter}
         }
     }
 }

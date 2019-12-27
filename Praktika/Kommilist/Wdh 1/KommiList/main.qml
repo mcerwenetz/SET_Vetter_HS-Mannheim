@@ -12,7 +12,19 @@ Window {
         id: view
 
         anchors {fill: parent; margins: 2}
-        model: MitarbeiterModel {}
+        //model: MitarbeiterModel {}
+        model: [{
+                vorname: "Hans",
+                nachname: "Peter",
+                beruf: "Bäcker",
+                alter: "10",
+            },
+            {
+                vorname: "Reiner",
+                nachname: "Winkler",
+                beruf: "Metzger",
+                alter: "30"
+            }]
         delegate: MitarbeiterDelegate {}
 
         spacing: 4
