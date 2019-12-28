@@ -14,13 +14,27 @@ Rectangle{
         onReleased: parent.scale=1.0
     }
     Row{
+
         spacing: 20
         Column{
             id:column
             Text{text: "Vorname:" +modelData.forename}
             Text{text: "Nachname:" +modelData.name}
             Text{text: "Matrikelnummer:" + modelData.matriculationNumber}
-            Text{text: "Alter:" +modelData.age}
+        }
+        Column{
+            x: 338
+            y: 3
+            id: modules
+            height: parent.height
+            ListView{
+                id: modview
+                spacing: 5
+                model: modelData.modules
+                delegate: Component{
+                    Text { text:"Fachname" + modelData.name}
+                }
+            }
         }
     }
 }

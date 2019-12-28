@@ -25,29 +25,12 @@ Window {
             request.send();
         }
 
-//    JSONListModel{
-//        id: jsonModel1
-//        source: "personen.txt"
-//        query: "$.personen[*]"
-//    }
+
 
     ListView{
         id: view
 
         anchors {fill: parent; margins: 2}
-        //model: MitarbeiterModel {}
-        //        model: [{
-        //                vorname: "Hans",
-        //                nachname: "Peter",
-        //                beruf: "Bäcker",
-        //                alter: "10",
-        //            },
-        //            {
-        //                vorname: "Reiner",
-        //                nachname: "Winkler",
-        //                beruf: "Metzger",
-        //                alter: "30"
-        //            }]
         delegate: MitarbeiterDelegate {}
 
         spacing: 4
