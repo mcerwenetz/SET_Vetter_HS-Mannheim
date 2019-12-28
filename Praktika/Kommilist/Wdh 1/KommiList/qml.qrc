@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>MitarbeiterModel.qml</file>
         <file>MitarbeiterDelegate.qml</file>
+        <file>personen.txt</file>
     </qresource>
 </RCC>
