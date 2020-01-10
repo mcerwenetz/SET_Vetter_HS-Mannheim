@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" name="model" qt:editorversion="4.11.0" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" initial="an">
+    <qt:editorinfo initialGeometry="113.70;164.24;-20;-20;40;40"/>
+    <state id="an">
+        <qt:editorinfo geometry="113.70;308.47;-60;-50;120;100" scenegeometry="113.70;308.47;53.70;258.47;120;100"/>
+        <transition type="external" event="ausschalten" target="aus"/>
+    </state>
+    <state id="aus">
+        <qt:editorinfo geometry="522.18;308.47;-60;-50;120;100" scenegeometry="522.18;308.47;462.18;258.47;120;100"/>
+        <transition type="external" event="anschalten" target="an">
+            <qt:editorinfo endTargetFactors="71.68;53.63"/>
+        </transition>
+    </state>
+</scxml>
